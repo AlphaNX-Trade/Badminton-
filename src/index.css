@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --color-vortex-black: #080A0C;
+  --color-vortex-charcoal: #111519;
+  --color-vortex-card: #151A20;
+  --color-vortex-surface: #191F24;
+  --color-vortex-border: #242C33;
+  --color-vortex-lime: #C7F464;
+  --color-vortex-silver: #C9CED0;
+  --color-vortex-muted: #9BA3A8;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+}
+
+/* Custom scrollbar for timetable & data tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #242C33;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3B4752;
+}
+

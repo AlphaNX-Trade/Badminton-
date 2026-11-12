@@ -1,0 +1,6 @@
+{
+  "name": "Vortex Badminton Arena",
+  "description": "Premium cinematic badminton court booking platform and sports facility management system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

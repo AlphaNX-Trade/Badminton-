@@ -1,0 +1,1202 @@
+MASTER PROMPT — PREMIUM CINEMATIC BADMINTON COURT BOOKING WEBSITE (INTERACTIVE DEMO)
+
+PROJECT OBJECTIVE
+
+Act as an elite international product design and engineering team consisting of senior UI/UX designers, creative directors, frontend engineers, interaction designers, animation specialists and product architects.
+
+Build an exceptionally polished, premium, cinematic and fully interactive badminton court booking website demo.
+
+This project is for a real badminton court business that currently operates three badminton courts and may expand its facility in the future.
+
+The objective is to demonstrate to the business owner what a world-class badminton booking platform could look and feel like.
+
+The website must combine:
+
+- Premium cinematic website design.
+- Advanced interactive experiences.
+- Easy badminton court booking.
+- Customer dashboard.
+- Administrative dashboard.
+- Court availability management.
+- Payment interface demonstrations.
+- Coaching and batch management.
+- Player community features.
+- Tournament experiences.
+- Premium animations and visual effects.
+
+The final product must look like a professionally designed international sports technology platform.
+
+Do not produce a generic sports website, ordinary booking template or basic dashboard.
+
+The quality of the visual experience, usability, interactions and attention to detail is extremely important.
+
+---
+
+1. STRICT TECHNICAL REQUIREMENTS
+
+This is a frontend-only demonstration project.
+
+DO NOT ADD ANY BACKEND OR DATABASE.
+
+Strictly prohibited:
+
+- Firebase.
+- Supabase.
+- MongoDB.
+- PostgreSQL.
+- MySQL.
+- Appwrite.
+- Any cloud database.
+- Backend APIs.
+- Server-side database services.
+- Authentication providers.
+- Payment gateway integrations.
+- Razorpay integration.
+- Stripe integration.
+- WhatsApp API integration.
+- SMS gateway integration.
+- External booking APIs.
+
+Do not connect or configure any database.
+
+Do not ask for database credentials.
+
+Do not create database tables.
+
+Do not create backend infrastructure.
+
+Do not create API endpoints.
+
+Do not introduce external services simply to make the demo work.
+
+Allowed technologies
+
+Use a modern frontend stack:
+
+- React.
+- TypeScript.
+- Next.js or the existing project framework.
+- Tailwind CSS.
+- Framer Motion or an equivalent maintained animation library.
+- Lucide icons.
+- Reusable React components.
+- CSS animations.
+- Local mock data.
+- Browser-based application state.
+
+If an existing project already has a suitable framework, inspect it before changing the architecture.
+
+Do not unnecessarily replace existing working dependencies.
+
+How the demo should work
+
+All functionality must be demonstrated through frontend state and realistic sample data.
+
+Examples:
+
+- Booking a court updates the availability interface.
+- Cancelling a booking releases the selected slot.
+- Adding a court updates the court list.
+- Changing a price updates the displayed price.
+- Creating a batch updates the batch list.
+- Changing a booking status updates the dashboard.
+- Selecting a payment option changes the checkout interface.
+- Admin actions update the corresponding customer-facing screens.
+
+Use React state and reusable mock-data services.
+
+You may use localStorage for optional browser-only demo persistence, but it must never be represented as a database or cloud storage.
+
+Include a Reset Demo Data option.
+
+Clearly indicate that bookings and payments are demonstrations and are not real transactions.
+
+---
+
+2. DESIGN DIRECTION — CINEMATIC LUXURY
+
+Use the supplied MotionSites.ai website video as the primary visual inspiration.
+
+Study the overall presentation style and adapt its design principles to badminton.
+
+Do not copy its branding, text, identity or exact layout.
+
+Create an original premium sports brand experience.
+
+Overall visual identity
+
+The website should feel:
+
+- Cinematic.
+- Luxurious.
+- Modern.
+- Athletic.
+- Technologically advanced.
+- Professional.
+- Premium.
+- Immersive.
+- Minimal but visually powerful.
+
+Colour palette
+
+Use a sophisticated dark colour system.
+
+Suggested palette:
+
+- Deep black: #080A0C.
+- Charcoal: #111519.
+- Secondary dark: #191F24.
+- Soft white: #F4F5F3.
+- Muted grey: #9BA3A8.
+- Electric lime: #C7F464.
+- Subtle silver: #C9CED0.
+
+Use the accent colour strategically for booking actions, active states, highlights and important information.
+
+Avoid excessive neon.
+
+Use a refined visual hierarchy.
+
+Typography
+
+Use high-quality typography.
+
+Suggested combinations:
+
+- Space Grotesk for headings.
+- Inter for interface text.
+- A refined editorial font for selected marketing sections if appropriate.
+
+Headings should be large, bold, elegant and carefully spaced.
+
+Use expressive typography for the hero section.
+
+Keep booking and dashboard text highly readable.
+
+Theme
+
+Create:
+
+- Premium dark theme as the primary website theme.
+- Optional light theme for dashboard usability.
+- Consistent design tokens across both themes.
+
+The dark cinematic experience should dominate the public homepage.
+
+The booking interface should prioritize clarity rather than unnecessary visual effects.
+
+---
+
+3. CINEMATIC HOMEPAGE
+
+The homepage must create a powerful first impression.
+
+Navigation bar
+
+Build a premium floating navigation bar.
+
+Include:
+
+- Brand logo.
+- Home.
+- Courts.
+- Book a Court.
+- Coaching.
+- Tournaments.
+- Community.
+- About.
+- Login.
+- Book Now button.
+
+On desktop, use a sophisticated horizontal navigation layout.
+
+On mobile, create a refined animated navigation drawer.
+
+Navigation should remain accessible and functional.
+
+Hero section
+
+Create a full-screen cinematic hero.
+
+Visual direction:
+
+- A professional indoor badminton court.
+- Dramatic overhead lighting.
+- Realistic badminton net.
+- Professional court flooring.
+- Floating shuttlecock or racket visual.
+- Dark atmospheric background.
+- Beautiful depth and lighting.
+- Premium sports photography or original visual assets.
+
+Use a large headline such as:
+
+PLAY YOUR GAME. OWN THE COURT.
+
+Supporting description:
+
+"Your game deserves a better court. Discover, book and experience badminton without limits."
+
+Primary CTA:
+BOOK YOUR COURT
+
+Secondary CTA:
+EXPLORE THE FACILITY
+
+Add a subtle animated scroll indicator.
+
+Use layered visual composition and smooth transitions.
+
+The hero must look impressive on mobile and desktop.
+
+Cinematic motion
+
+Implement:
+
+- Smooth entrance animations.
+- Text reveal effects.
+- Subtle parallax.
+- Background movement.
+- Floating object animations.
+- Scroll-triggered transitions.
+- Sophisticated hover interactions.
+
+Animations must remain smooth and performant.
+
+Respect reduced-motion settings.
+
+Avoid excessive animations that slow down booking.
+
+---
+
+4. FACILITY SHOWCASE
+
+Create a premium section introducing the three badminton courts.
+
+Initial courts:
+
+- Court 01.
+- Court 02.
+- Court 03.
+
+Use beautiful court imagery and individual presentation cards.
+
+Each card should display:
+
+- Court name.
+- Court image.
+- Court status.
+- Available booking times.
+- Hourly price.
+- Facilities.
+- Book This Court button.
+
+Allow interactive selection of a court.
+
+Create a visually impressive section with a combination of large images, subtle gradients and elegant typography.
+
+Future scalability
+
+The frontend must support additional courts through mock admin actions.
+
+If the administrator adds Court 04, it should automatically appear in the facility showcase and booking interface.
+
+Never hardcode exactly three courts into reusable components.
+
+---
+
+5. ADVANCED COURT BOOKING SYSTEM
+
+This is the most important functional module.
+
+Build an interactive booking experience.
+
+Operating hours
+
+Initial operating hours:
+6:00 AM to 11:00 PM.
+
+Each default session:
+60 minutes.
+
+Generate 17 hourly slots per court.
+
+The three courts should operate independently.
+
+Example:
+
+- Court 01: 6 AM – 7 AM.
+- Court 02: 6 AM – 7 AM.
+- Court 03: 6 AM – 7 AM.
+
+All three can be booked simultaneously.
+
+Booking interface
+
+Create a premium interactive availability calendar.
+
+Allow users to:
+
+1. Select a date.
+2. Select a court.
+3. View available time slots.
+4. Select a one-hour session.
+5. View pricing.
+6. Review booking details.
+7. Choose payment demonstration mode.
+8. Confirm the demo booking.
+9. View booking confirmation.
+
+Display:
+
+- Available.
+- Selected.
+- Booked.
+- Unavailable.
+- Maintenance.
+- Reserved.
+
+Use both colours and labels to communicate status.
+
+Booking timetable
+
+Desktop:
+
+- Display courts as rows.
+- Display time slots as columns.
+- Provide horizontal scrolling when needed.
+
+Mobile:
+
+- Display a court selector.
+- Display vertically arranged hourly slots.
+- Use clear availability indicators.
+
+Provide:
+
+- Today.
+- Tomorrow.
+- Date picker.
+- Previous day.
+- Next day.
+- Morning filter.
+- Afternoon filter.
+- Evening filter.
+- Next available slot.
+
+Demo booking functionality
+
+When a customer confirms a booking:
+
+- Update the selected slot.
+- Prevent another demo booking from selecting the same court and time.
+- Generate a unique demo booking reference.
+- Update My Bookings.
+- Update admin dashboard statistics.
+- Show a polished confirmation screen.
+- Allow cancellation.
+
+If a booking is cancelled, release its slot.
+
+Simulate temporary slot reservation with an optional countdown.
+
+Ensure the mock booking logic prevents overlapping bookings.
+
+Clearly label all bookings as DEMO.
+
+---
+
+6. BOOKING CHECKOUT AND PAYMENT DEMO
+
+Create an advanced checkout experience.
+
+Display:
+
+- Customer details.
+- Selected court.
+- Date.
+- Time.
+- Duration.
+- Price.
+- Applicable discount.
+- Total amount.
+
+Payment options:
+
+1. Pay Online.
+2. Pay Later.
+
+Online payment demonstration
+
+Build a beautiful mock payment selection interface.
+
+Show examples of:
+
+- UPI.
+- Credit card.
+- Debit card.
+- Net banking.
+
+Do not collect or transmit actual payment credentials.
+
+When the customer selects Demo Pay Now, simulate a successful transaction using local state.
+
+Show a clearly labelled demonstration payment result.
+
+Pay Later
+
+Allow the user to choose Pay Later.
+
+Update the booking as:
+
+- Confirmed Demo Booking.
+- Payment Pending.
+
+Show the payment status in the customer dashboard.
+
+Receipts
+
+Create an attractive demo receipt with:
+
+- Booking reference.
+- Court.
+- Session date.
+- Time.
+- Amount.
+- Payment method.
+- Payment status.
+
+Provide a print or PDF-style preview using browser capabilities if practical.
+
+Never represent simulated payments as real payments.
+
+---
+
+7. CUSTOMER DASHBOARD
+
+Build a dedicated customer dashboard.
+
+The interface should look like a premium sports membership application.
+
+Include:
+
+Dashboard overview
+
+- Welcome message.
+- Upcoming bookings.
+- Previous bookings.
+- Total demo bookings.
+- Favourite court.
+- Membership status.
+- Pending payment status.
+
+My Bookings
+
+Tabs:
+
+- Upcoming.
+- Completed.
+- Cancelled.
+- Pending.
+
+Each booking card should show:
+
+- Booking ID.
+- Court.
+- Date.
+- Time.
+- Duration.
+- Amount.
+- Payment status.
+- Booking status.
+
+Actions:
+
+- View Details.
+- Cancel Booking.
+- Reschedule Booking.
+
+Profile
+
+Include:
+
+- Name.
+- Email.
+- Phone.
+- Profile photo.
+- Playing preferences.
+- Favourite court.
+
+Allow editing using local demo state.
+
+Notifications
+
+Create a notification centre with:
+
+- Booking confirmation.
+- Upcoming session reminder.
+- Cancellation confirmation.
+- Payment reminder.
+- Tournament announcement.
+- Membership updates.
+
+Use sample notifications and update their read status interactively.
+
+---
+
+8. ADVANCED ADMIN DASHBOARD
+
+Create a separate admin dashboard.
+
+The dashboard must feel like a premium SaaS operations product.
+
+Use a clean, sophisticated dark interface with an optional light mode.
+
+Overview
+
+Display sample analytics:
+
+- Total courts.
+- Active courts.
+- Today's bookings.
+- Monthly bookings.
+- Today's revenue.
+- Monthly revenue.
+- Unpaid demo bookings.
+- Cancellation percentage.
+- Occupancy percentage.
+- Most popular court.
+
+All dashboard values must be calculated from the current local mock data.
+
+Do not use disconnected hardcoded statistics.
+
+Charts
+
+Create professional interactive charts:
+
+- Daily booking trends.
+- Weekly booking trends.
+- Monthly revenue.
+- Court occupancy.
+- Peak-hour analysis.
+- Payment status distribution.
+
+Use appropriate chart libraries if necessary.
+
+Admin navigation
+
+Include:
+
+- Overview.
+- Courts.
+- Bookings.
+- Customers.
+- Batch Management.
+- Coaching.
+- Tournaments.
+- Memberships.
+- Pricing.
+- Maintenance.
+- Payments.
+- Reports.
+- Notifications.
+- Settings.
+
+Every navigation item must lead to a functional demo screen.
+
+Do not create empty menu pages.
+
+---
+
+9. COURT MANAGEMENT
+
+Create a functional court management screen.
+
+Admin can:
+
+- Add a court.
+- Edit a court.
+- Change court name.
+- Change hourly price.
+- Activate or deactivate a court.
+- Mark court under maintenance.
+- Block a date.
+- Block individual time slots.
+- View booking history.
+
+Adding a new court must update:
+
+- Public facility showcase.
+- Booking calendar.
+- Admin court list.
+- Court analytics.
+
+Create a polished add-court modal.
+
+Use confirmation dialogs for destructive actions.
+
+---
+
+10. BATCH AND COACHING MANAGEMENT
+
+Create a dedicated coaching module.
+
+Allow demo creation of:
+
+- Beginner batch.
+- Intermediate batch.
+- Advanced batch.
+- Kids batch.
+- Professional training batch.
+
+Each batch should display:
+
+- Batch name.
+- Coach.
+- Court.
+- Days.
+- Time.
+- Start date.
+- End date.
+- Capacity.
+- Enrolled students.
+- Fee.
+- Status.
+
+Allow:
+
+- Create batch.
+- Edit batch.
+- Add student.
+- Remove student.
+- View students.
+- Track demo attendance.
+- View batch schedule.
+
+Recurring sessions must reserve the corresponding mock court slots.
+
+If a recurring batch reserves Court 01 from 6 AM to 7 AM on Monday, Wednesday and Friday, those slots should display as unavailable for ordinary customers on those dates.
+
+---
+
+11. PLAYER COMMUNITY
+
+Create a premium badminton community experience.
+
+Include:
+
+- Player discovery.
+- Player profiles.
+- Skill levels.
+- Playing preferences.
+- Preferred playing times.
+- Preferred court.
+- Find a playing partner.
+- Send demo challenge.
+- Accept or reject challenge.
+- Player leaderboard.
+
+Create sample player profiles.
+
+Do not implement real messaging or social networking infrastructure.
+
+Use simulated interactions.
+
+Matchmaking
+
+Allow users to filter players by:
+
+- Beginner.
+- Intermediate.
+- Advanced.
+- Professional.
+
+Allow filtering by preferred playing time.
+
+Provide a Find Players interface.
+
+---
+
+12. TOURNAMENT MANAGEMENT
+
+Create an attractive tournament section.
+
+Display:
+
+- Upcoming tournaments.
+- Tournament name.
+- Tournament type.
+- Registration fee.
+- Date.
+- Venue.
+- Available team slots.
+- Registration status.
+
+Allow demo registration.
+
+Support tournament formats in the UI:
+
+- Singles.
+- Doubles.
+- Mixed doubles.
+- Knockout.
+- League.
+
+Create tournament detail pages.
+
+Create an interactive bracket visualization using mock data.
+
+Admin should be able to create tournaments and update their status.
+
+---
+
+13. MEMBERSHIP AND LOYALTY
+
+Create a membership page.
+
+Example plans:
+
+- Basic.
+- Premium.
+- Elite.
+
+Display:
+
+- Price.
+- Duration.
+- Benefits.
+- Discounts.
+- Booking privileges.
+- Included playing hours.
+
+Create membership selection interactions.
+
+Add a demo loyalty points section.
+
+Display:
+
+- Current points.
+- Points earned.
+- Reward history.
+- Available rewards.
+
+All membership and reward interactions should work using local demo state.
+
+---
+
+14. WAITLIST AND SMART AVAILABILITY
+
+Create a waitlist demonstration.
+
+If a court is fully booked:
+
+- Allow the customer to join the waitlist.
+- Show the selected court and time.
+- Show waitlist status.
+
+When an existing demo booking is cancelled, simulate an availability notification.
+
+Create a next-available-slot feature.
+
+Provide suggestions for nearby available times within the facility's timetable.
+
+---
+
+15. MAINTENANCE AND FACILITY MANAGEMENT
+
+Create a facility management screen.
+
+Display:
+
+- Court condition.
+- Maintenance status.
+- Maintenance schedule.
+- Maintenance notes.
+- Court availability.
+
+Admin can:
+
+- Block a court.
+- Add maintenance details.
+- Schedule maintenance.
+- Complete maintenance.
+- Restore availability.
+
+Maintenance blocks must affect the demo booking calendar.
+
+---
+
+16. ADVANCED SETTINGS
+
+Build a functional settings area.
+
+Include:
+
+Facility settings
+
+- Facility name.
+- Opening time.
+- Closing time.
+- Booking duration.
+- Contact information.
+- Address.
+
+Booking settings
+
+- Minimum advance booking time.
+- Maximum advance booking period.
+- Cancellation rules.
+- Pay Later availability.
+- Temporary booking hold duration.
+
+Pricing settings
+
+- Court-specific price.
+- Peak pricing.
+- Off-peak pricing.
+- Weekend pricing.
+- Discount settings.
+
+Changing these settings must update the relevant demo interface.
+
+All settings are local demo values.
+
+---
+
+17. REPORTS AND ANALYTICS
+
+Create a reporting interface.
+
+Include:
+
+- Booking reports.
+- Revenue reports.
+- Court utilization reports.
+- Customer activity.
+- Payment distribution.
+- Cancellation reports.
+- Batch reports.
+- Tournament reports.
+
+Use realistic mock data.
+
+All charts and totals should update when users make demo changes.
+
+Include date filters:
+
+- Today.
+- Last 7 days.
+- Last 30 days.
+- This month.
+- Custom range.
+
+Provide a CSV export using browser-generated data.
+
+---
+
+18. VISUAL DESIGN FOR ALL SCREENS
+
+Maintain the same high-end design language throughout the project.
+
+Homepage
+
+Cinematic, immersive, premium.
+
+Booking page
+
+Clean, readable, interactive, easy to use.
+
+Customer dashboard
+
+Elegant, minimal and informative.
+
+Admin dashboard
+
+Professional SaaS design with high-quality analytics.
+
+Community
+
+Energetic, modern and social.
+
+Tournament page
+
+Sport-focused, dynamic and engaging.
+
+Checkout
+
+Simple, trustworthy and premium.
+
+Mobile
+
+Excellent touch interactions, readable typography and carefully arranged cards.
+
+Avoid:
+
+- Generic templates.
+- Overused gradients.
+- Excessive glass effects.
+- Random animations.
+- Unnecessary decorative elements.
+- Tiny text.
+- Inconsistent icons.
+- Inconsistent spacing.
+- Broken layouts.
+- Empty dashboard cards.
+
+---
+
+19. MICRO-INTERACTIONS
+
+Add refined interactions throughout the application.
+
+Examples:
+
+- Animated navigation.
+- Smooth dropdowns.
+- Button hover transitions.
+- Animated court selection.
+- Calendar transitions.
+- Booking confirmation animation.
+- Loading skeletons.
+- Toast notifications.
+- Modal transitions.
+- Interactive charts.
+- Smooth theme switching.
+- Scroll reveal.
+- Animated counters.
+- Elegant page transitions.
+
+Use consistent animation timing.
+
+All interactive controls must have visible hover, focus, active and disabled states.
+
+---
+
+20. RESPONSIVE AND MOBILE EXPERIENCE
+
+The demo must work beautifully on:
+
+- Android smartphones.
+- iPhones.
+- Tablets.
+- Laptops.
+- Desktop screens.
+
+Mobile is a major priority.
+
+Create:
+
+- Mobile navigation.
+- Responsive booking calendar.
+- Touch-friendly court cards.
+- Responsive dashboard navigation.
+- Mobile-friendly tables.
+- Proper modal sizing.
+- Responsive charts.
+- Fixed mobile booking CTA where useful.
+
+Test multiple viewport sizes.
+
+Avoid horizontal scrolling except where a timetable intentionally requires it.
+
+---
+
+21. DEMO LOGIN AND ROLE SWITCHING
+
+Since this project has no authentication backend, create a demonstration role selector.
+
+Allow the visitor to enter:
+
+- Customer Demo.
+- Admin Demo.
+- Coach Demo.
+- Reception Demo.
+
+Provide a visible demo mode indicator.
+
+No real passwords or authentication provider are required.
+
+Ensure different roles display appropriate frontend navigation and demo capabilities.
+
+This is a UI demonstration, not a secure access-control system.
+
+---
+
+22. DATA AND DEMO EXPERIENCE
+
+Create realistic sample data.
+
+Initial data should include:
+
+- Three active courts.
+- Sample bookings.
+- Sample customers.
+- Sample coaching batches.
+- Sample tournaments.
+- Sample notifications.
+- Sample membership plans.
+- Sample pricing.
+- Sample maintenance records.
+
+The data should look realistic and professionally presented.
+
+Do not use obviously artificial names such as User 1, User 2 or Test Customer.
+
+Clearly distinguish sample information from real business information.
+
+The facility's actual business name, logo, address, phone number, prices and photographs should remain replaceable.
+
+Create a centralized demo-data configuration file.
+
+---
+
+23. PROJECT STRUCTURE AND CODE QUALITY
+
+Organize the project professionally.
+
+Suggested structure:
+
+src/
+
+- app/
+- components/
+  - layout/
+  - navigation/
+  - homepage/
+  - booking/
+  - courts/
+  - dashboard/
+  - admin/
+  - customer/
+  - community/
+  - tournaments/
+  - coaching/
+  - memberships/
+  - analytics/
+  - shared/
+- data/
+- hooks/
+- services/
+- state/
+- types/
+- utils/
+- styles/
+
+Use reusable components.
+
+Keep business rules separate from presentation.
+
+Use TypeScript types for all important data structures.
+
+Avoid enormous single-file components.
+
+Avoid duplicated code.
+
+Use meaningful naming conventions.
+
+Implement appropriate error boundaries and empty states.
+
+---
+
+24. TESTING AND QUALITY REVIEW
+
+Before declaring the demo complete, test all major interactions.
+
+Booking tests
+
+- Select a court.
+- Select a date.
+- Select a time.
+- Confirm a booking.
+- Prevent duplicate demo bookings.
+- Cancel a booking.
+- Release the slot.
+- Switch courts.
+
+Admin tests
+
+- Add a court.
+- Edit a court.
+- Block a court.
+- Update pricing.
+- Change operating hours.
+- Create a batch.
+- Add a customer.
+- Update a booking.
+- Create a tournament.
+
+Customer tests
+
+- View bookings.
+- Edit profile.
+- Cancel booking.
+- Join waitlist.
+- Select membership.
+- View notifications.
+
+Payment demo tests
+
+- Select Pay Online.
+- Simulate payment success.
+- Select Pay Later.
+- Display pending payment.
+- Generate demo receipt.
+
+Responsive tests
+
+Check Android mobile widths, tablet, laptop and large desktop.
+
+Fix all major visual and functional defects.
+
+---
+
+25. FINAL QUALITY EXPECTATIONS
+
+The final result must satisfy the following:
+
+1. The homepage should create an immediate premium impression.
+2. The design should reflect the cinematic reference video.
+3. All important navigation links must work.
+4. The booking experience must be interactive.
+5. All three initial courts must be available in the system.
+6. The architecture must support adding more courts.
+7. Demo bookings must update availability.
+8. Demo cancellations must release slots.
+9. Payment selection must work in demonstration mode.
+10. Customer dashboard must be interactive.
+11. Admin dashboard must be interactive.
+12. Coaching and batch management must work.
+13. Tournament pages must work.
+14. Community screens must work.
+15. Pricing changes must update the interface.
+16. Charts must use actual mock-data calculations.
+17. Mobile experience must be excellent.
+18. Animations must be smooth.
+19. No broken links or non-functional buttons.
+20. No backend or database integrations.
+21. No Firebase.
+22. No Supabase.
+23. No real payment gateway.
+24. No API dependencies.
+25. All demonstration functionality must run in the browser.
+
+FINAL INSTRUCTION
+
+First inspect the existing project and understand its current framework and files.
+
+Do not delete or replace existing work unnecessarily.
+
+Build the complete interactive frontend demo with a high standard of engineering and visual quality.
+
+Do not stop after creating the homepage.
+
+Implement all the major pages, navigation, customer experience, admin experience, booking flow, demo payment flow, batch management, community and tournament screens.
+
+Use realistic content and polished imagery.
+
+Prioritize visual quality, functional interactions, consistency and responsiveness.
+
+The final deliverable should be impressive enough to present directly to a badminton facility owner as a premium website and software product demonstration.
+
+Remember: This is a frontend-only interactive demo. No database, no backend, no Firebase, no Supabase and no external payment integration.
