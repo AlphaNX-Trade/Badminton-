@@ -14,6 +14,8 @@ import {
   ShieldCheck,
   ChevronDown,
   ChevronUp,
+  ZoomIn,
+  ZoomOut,
 } from 'lucide-react';
 
 type ModelType = 'court' | 'shuttle' | 'racket';
@@ -36,7 +38,12 @@ export const Anatomy3DExperience: React.FC = () => {
     activeModel: 'court' as ModelType,
     lightPreset: 'tournament' as LightPreset,
     autoRotate: true,
+    zoomDelta: 0,
   });
+
+  const adjustCameraZoom = (factor: number) => {
+    paramsRef.current.zoomDelta += factor;
+  };
 
   useEffect(() => {
     paramsRef.current.explosionAmount = explosionAmount;
@@ -87,14 +94,17 @@ export const Anatomy3DExperience: React.FC = () => {
 
     container.replaceChildren(renderer.domElement);
 
-    // 4. Orbit Controls
+    // 4. Orbit Controls (disable wheel zoom & pan so page scroll never gets stuck)
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
+    controls.enableZoom = false;
+    controls.enablePan = false;
     controls.maxPolarAngle = Math.PI / 2 + 0.1;
-    controls.minDistance = 3;
+    controls.minDistance = 4;
     controls.maxDistance = 16;
     controls.target.set(0, 0, 0);
+    renderer.domElement.style.touchAction = 'pan-y';
 
     // 5. Lighting rig
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
@@ -365,15 +375,31 @@ export const Anatomy3DExperience: React.FC = () => {
     racketGroup.visible = false;
 
     // -------------------------------------------------------------
-    // ANIMATION & RENDER LOOP
+    // ANIMATION & RENDER LOOP (with IntersectionObserver pause)
     // -------------------------------------------------------------
     let animationFrameId = 0;
+    let isInView = true;
     const clock = new THREE.Clock();
 
     const animate = () => {
-      const delta = clock.getDelta();
+      if (!isInView) {
+        animationFrameId = 0;
+        return;
+      }
+
+      const delta = Math.min(clock.getDelta(), 0.05);
       const time = clock.getElapsedTime();
       const currentParams = paramsRef.current;
+
+      // Apply button-driven zoom smoothly without trapping wheel scroll
+      if (currentParams.zoomDelta !== 0) {
+        const direction = new THREE.Vector3().subVectors(camera.position, controls.target);
+        const currentDist = direction.length();
+        const nextDist = THREE.MathUtils.clamp(currentDist + currentParams.zoomDelta, 4.5, 15);
+        direction.setLength(nextDist);
+        camera.position.copy(controls.target).add(direction);
+        currentParams.zoomDelta = 0;
+      }
 
       // Switch active model visibility
       courtGroup.visible = currentParams.activeModel === 'court';
@@ -429,6 +455,19 @@ export const Anatomy3DExperience: React.FC = () => {
       animationFrameId = requestAnimationFrame(animate);
     };
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const wasInView = isInView;
+        isInView = entry.isIntersecting;
+        if (isInView && !wasInView && animationFrameId === 0) {
+          clock.getDelta();
+          animate();
+        }
+      },
+      { threshold: 0.01 }
+    );
+    observer.observe(container);
+
     animate();
 
     // Resize handler
@@ -436,6 +475,7 @@ export const Anatomy3DExperience: React.FC = () => {
       if (!container) return;
       const newW = container.clientWidth;
       const newH = container.clientHeight;
+      if (newW === 0 || newH === 0) return;
       camera.aspect = newW / newH;
       camera.updateProjectionMatrix();
       renderer.setSize(newW, newH);
@@ -444,8 +484,9 @@ export const Anatomy3DExperience: React.FC = () => {
     window.addEventListener('resize', handleResize);
 
     return () => {
+      observer.disconnect();
       window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
       controls.dispose();
       renderer.dispose();
       scene.clear();
@@ -486,7 +527,7 @@ export const Anatomy3DExperience: React.FC = () => {
   ];
 
   return (
-    <div className="relative w-full h-[640px] sm:h-[720px] bg-[#080A0C] border border-[#242C33] rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between">
+    <div className="relative w-full h-[540px] sm:h-[640px] bg-[#080A0C] border border-[#242C33] rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between">
       {/* 3D Canvas Mount */}
       <div ref={mountRef} className="absolute inset-0 z-0 cursor-grab active:cursor-grabbing" />
 
@@ -512,7 +553,7 @@ export const Anatomy3DExperience: React.FC = () => {
         </div>
 
         {/* Model Switcher Buttons */}
-        <div className="pointer-events-auto flex items-center gap-1.5 bg-[#111519]/90 border border-[#242C33] p-1 rounded-2xl backdrop-blur-md self-start sm:self-auto shadow-xl">
+        <div className="pointer-events-auto flex items-center gap-1.5 bg-[#111519]/95 border border-[#242C33] p-1 rounded-2xl self-start sm:self-auto shadow-xl">
           <button
             onClick={() => setActiveModel('court')}
             className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
@@ -558,7 +599,7 @@ export const Anatomy3DExperience: React.FC = () => {
       {/* Layer detail card when court model is active */}
       {activeModel === 'court' && (
         <div className="relative z-10 px-6 pointer-events-none hidden lg:block">
-          <div className="max-w-md bg-[#111519]/90 border border-[#242C33] rounded-2xl p-4 shadow-xl backdrop-blur-md pointer-events-auto space-y-2">
+          <div className="max-w-md bg-[#111519]/95 border border-[#242C33] rounded-2xl p-4 shadow-xl pointer-events-auto space-y-2">
             <div className="flex items-center justify-between text-xs">
               <span className="font-semibold text-[#C7F464]">
                 {layerDescriptions[selectedLayerIndex ?? 0].title}
@@ -577,7 +618,7 @@ export const Anatomy3DExperience: React.FC = () => {
 
       {/* Unified Bottom Control Dock (Compliant with Three.js skill) */}
       <div className="relative z-20 p-4 sm:p-6 w-full flex flex-col items-center pointer-events-none">
-        <div className="pointer-events-auto w-full max-w-3xl bg-[#111519]/95 border border-[#242C33] rounded-2xl p-4 shadow-2xl backdrop-blur-md space-y-3 transition-all">
+        <div className="pointer-events-auto w-full max-w-3xl bg-[#111519]/95 border border-[#242C33] rounded-2xl p-4 shadow-2xl space-y-3 transition-all">
           {/* Header toggle for dock */}
           <div className="flex items-center justify-between border-b border-[#1E252C] pb-2 text-xs">
             <div className="flex items-center gap-2 text-[#9BA3A8]">
@@ -651,9 +692,26 @@ export const Anatomy3DExperience: React.FC = () => {
                 </div>
               </div>
 
-              {/* Auto-Rotation Toggle */}
-              <div className="sm:col-span-2 flex sm:justify-end items-center pt-2 sm:pt-0">
+              {/* Auto-Rotation & Zoom Controls */}
+              <div className="sm:col-span-2 flex sm:justify-end items-center gap-1.5 pt-2 sm:pt-0">
                 <button
+                  type="button"
+                  onClick={() => adjustCameraZoom(-1.5)}
+                  className="p-1.5 rounded-xl border bg-[#151A20] text-[#9BA3A8] hover:text-[#F4F5F3] border-[#242C33] transition-colors"
+                  title="Zoom In"
+                >
+                  <ZoomIn className="w-3.5 h-3.5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => adjustCameraZoom(1.5)}
+                  className="p-1.5 rounded-xl border bg-[#151A20] text-[#9BA3A8] hover:text-[#F4F5F3] border-[#242C33] transition-colors"
+                  title="Zoom Out"
+                >
+                  <ZoomOut className="w-3.5 h-3.5" />
+                </button>
+                <button
+                  type="button"
                   onClick={() => setAutoRotate(!autoRotate)}
                   className={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition-colors ${
                     autoRotate

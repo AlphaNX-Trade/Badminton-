@@ -33,7 +33,11 @@ const MainAppContent: React.FC = () => {
         {activeNav === 'home' && (
           <div className="space-y-0">
             <HeroSection />
-            <Anatomy3DExperience />
+            <section className="py-14 bg-[#080A0C] border-b border-[#1E252C]">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <Anatomy3DExperience />
+              </div>
+            </section>
             <CourtShowcase />
 
             {/* Quick interactive booking calendar anchor section on homepage */}
@@ -69,8 +73,10 @@ const MainAppContent: React.FC = () => {
         )}
 
         {activeNav === 'anatomy3d' && (
-          <div className="py-6 bg-[#080A0C]">
-            <Anatomy3DExperience />
+          <div className="py-10 bg-[#080A0C]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <Anatomy3DExperience />
+            </div>
           </div>
         )}
 
