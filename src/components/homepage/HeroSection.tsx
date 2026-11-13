@@ -62,10 +62,11 @@ export const HeroSection: React.FC = () => {
               </button>
 
               <button
-                onClick={() => setActiveNav('courts')}
+                onClick={() => setActiveNav('anatomy3d')}
                 className="px-6 py-3.5 bg-[#151A20] hover:bg-[#1C232A] text-[#F4F5F3] hover:text-[#C7F464] border border-[#242C33] hover:border-[#C7F464]/50 font-semibold text-sm rounded-xl transition-colors flex items-center justify-center gap-2"
               >
-                <span>EXPLORE THE FACILITY</span>
+                <Sparkles className="w-4 h-4 text-[#C7F464]" />
+                <span>3D ANATOMY</span>
               </button>
             </div>
           </div>
@@ -300,7 +301,7 @@ export const HeroSection: React.FC = () => {
                 <option value="all">All Available Courts</option>
                 {courts.map((c) => (
                   <option key={c.id} value={c.id}>
-                    {c.name.split('—')[0]} (${c.pricePerHour}/hr)
+                    {c.name.split('—')[0]} (₹{c.pricePerHour}/hr)
                   </option>
                 ))}
               </select>

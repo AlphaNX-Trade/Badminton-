@@ -38,7 +38,7 @@ export const CommunityPage: React.FC = () => {
         {/* Header */}
         <div className="max-w-3xl space-y-4">
           <span className="text-xs font-semibold text-[#C7F464] uppercase tracking-wider block">
-            Vortex Player Network
+            ARS Player Network
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-[#F4F5F3] font-display tracking-tight leading-tight">
             COMMUNITY & <br />
@@ -215,7 +215,7 @@ export const CommunityPage: React.FC = () => {
             <Trophy className="w-6 h-6 text-amber-400" />
             <div>
               <h3 className="text-xl font-bold text-[#F4F5F3] font-display">
-                Vortex Arena Championship Leaderboard
+                ARS Badminton Arena Championship Leaderboard
               </h3>
               <p className="text-xs text-[#9BA3A8]">
                 Rankings computed from verified match win records and attendance loyalty points.
@@ -232,7 +232,7 @@ export const CommunityPage: React.FC = () => {
                   <th className="px-4 py-3">Skill Tier</th>
                   <th className="px-4 py-3">Matches</th>
                   <th className="px-4 py-3">Win Rate</th>
-                  <th className="px-4 py-3">Vortex Points</th>
+                  <th className="px-4 py-3">ARS Points</th>
                   <th className="px-4 py-3 text-right">Action</th>
                 </tr>
               </thead>

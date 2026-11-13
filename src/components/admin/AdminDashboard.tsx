@@ -68,7 +68,7 @@ export const AdminDashboard: React.FC = () => {
   // New Court form state
   const [newCourtName, setNewCourtName] = useState('');
   const [newCourtSurface, setNewCourtSurface] = useState<SurfaceType>('BWF Synthetic Mat');
-  const [newCourtPrice, setNewCourtPrice] = useState(32);
+  const [newCourtPrice, setNewCourtPrice] = useState(700);
   const [newCourtBadge, setNewCourtBadge] = useState('Expansion Court');
   const [newCourtDesc, setNewCourtDesc] = useState('Championship synthetic playing surface.');
 
@@ -80,7 +80,7 @@ export const AdminDashboard: React.FC = () => {
   const [newBatchCourtId, setNewBatchCourtId] = useState(courts[0]?.id || 'court-1');
   const [newBatchDays, setNewBatchDays] = useState<string[]>(['Mon', 'Wed', 'Fri']);
   const [newBatchStartHour, setNewBatchStartHour] = useState(7);
-  const [newBatchFee, setNewBatchFee] = useState(150);
+  const [newBatchFee, setNewBatchFee] = useState(3500);
   const [newBatchCapacity, setNewBatchCapacity] = useState(8);
 
   // Student addition state
@@ -91,8 +91,8 @@ export const AdminDashboard: React.FC = () => {
   const [newTrnName, setNewTrnName] = useState('');
   const [newTrnFormat, setNewTrnFormat] = useState<TournamentFormat>('Singles Knockout');
   const [newTrnDate, setNewTrnDate] = useState(getTodayStr(14));
-  const [newTrnFee, setNewTrnFee] = useState(50);
-  const [newTrnPrize, setNewTrnPrize] = useState('$3,000 Cash Pool');
+  const [newTrnFee, setNewTrnFee] = useState(800);
+  const [newTrnPrize, setNewTrnPrize] = useState('₹50,000 Cash Pool');
   const [newTrnSlots, setNewTrnSlots] = useState(32);
   const [newTrnSkill, setNewTrnSkill] = useState('Open Category');
 
@@ -180,7 +180,7 @@ export const AdminDashboard: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', `Vortex_Arena_Bookings_${getTodayStr(0)}.csv`);
+    link.setAttribute('download', `ARS_Badminton_Arena_Bookings_${getTodayStr(0)}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -246,7 +246,7 @@ export const AdminDashboard: React.FC = () => {
       name: newTrnName.trim(),
       format: newTrnFormat,
       date: newTrnDate,
-      venue: 'Vortex Arena — Championship Courts',
+      venue: 'ARS Badminton Arena — Championship Courts',
       entryFee: Number(newTrnFee),
       prizePool: newTrnPrize,
       totalSlots: Number(newTrnSlots),
@@ -267,7 +267,7 @@ export const AdminDashboard: React.FC = () => {
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xs font-semibold text-[#C7F464] uppercase tracking-wider">
-                Vortex Facility Control Suite
+                ARS Badminton Arena Control Suite
               </span>
               <span className="text-[10px] text-[#9BA3A8] bg-[#151A20] px-2 py-0.5 rounded border border-[#242C33]">
                 Live Browser Engine
@@ -353,7 +353,7 @@ export const AdminDashboard: React.FC = () => {
                   Today's Revenue
                 </span>
                 <p className="text-2xl font-bold font-mono text-[#C7F464] tabular-nums">
-                  ${analytics.todayRevenue.toFixed(0)}
+                  ₹{analytics.todayRevenue.toFixed(0)}
                 </p>
                 <span className="text-[11px] text-[#9BA3A8]">From today's matches</span>
               </div>
@@ -363,7 +363,7 @@ export const AdminDashboard: React.FC = () => {
                   Monthly Revenue
                 </span>
                 <p className="text-2xl font-bold font-mono text-[#F4F5F3] tabular-nums">
-                  ${analytics.monthlyRevenue.toFixed(0)}
+                  ₹{analytics.monthlyRevenue.toFixed(0)}
                 </p>
                 <span className="text-[11px] text-[#9BA3A8]">All active bookings</span>
               </div>
@@ -560,7 +560,7 @@ export const AdminDashboard: React.FC = () => {
                     <div className="flex justify-between text-[#9BA3A8]">
                       <span>Hourly Base Price:</span>
                       <span className="font-mono text-[#F4F5F3] font-bold">
-                        ${court.pricePerHour}/hr
+                        ₹{court.pricePerHour}/hr
                       </span>
                     </div>
                     <div className="flex justify-between text-[#9BA3A8]">
@@ -694,7 +694,7 @@ export const AdminDashboard: React.FC = () => {
                             <span className="text-[#9BA3A8] block text-[11px]">{b.timeSlot}</span>
                           </td>
                           <td className="px-4 py-3.5 font-mono font-bold">
-                            ${b.totalAmount.toFixed(2)}
+                            ₹{b.totalAmount.toFixed(2)}
                           </td>
                           <td className="px-4 py-3.5">
                             <span
@@ -794,7 +794,7 @@ export const AdminDashboard: React.FC = () => {
                         {batch.level}
                       </span>
                       <span className="text-xs font-mono font-bold text-[#C7F464]">
-                        ${batch.monthlyFee}/mo
+                        ₹{batch.monthlyFee}/mo
                       </span>
                     </div>
 
@@ -896,7 +896,7 @@ export const AdminDashboard: React.FC = () => {
                     </div>
                     <div className="p-2.5 rounded-lg bg-[#151A20] border border-[#242C33]">
                       <span className="text-[11px] text-[#9BA3A8] block">Registration Fee</span>
-                      <span className="text-[#C7F464] font-mono font-bold">${trn.entryFee} / entry</span>
+                      <span className="text-[#C7F464] font-mono font-bold">₹{trn.entryFee} / entry</span>
                     </div>
                   </div>
 
@@ -954,7 +954,7 @@ export const AdminDashboard: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-[#9BA3A8] mb-1">Base Court Price ($/hr)</label>
+                  <label className="block text-[#9BA3A8] mb-1">Base Court Price (₹/hr)</label>
                   <input
                     type="number"
                     value={settings.baseCourtPrice}
@@ -1044,7 +1044,7 @@ export const AdminDashboard: React.FC = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-[#9BA3A8] mb-1">Base Price ($/hr)</label>
+                    <label className="block text-[#9BA3A8] mb-1">Base Price (₹/hr)</label>
                     <input
                       type="number"
                       required
@@ -1167,7 +1167,7 @@ export const AdminDashboard: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-[#9BA3A8] mb-1">Monthly Fee ($)</label>
+                    <label className="block text-[#9BA3A8] mb-1">Monthly Fee (₹)</label>
                     <input
                       type="number"
                       value={newBatchFee}

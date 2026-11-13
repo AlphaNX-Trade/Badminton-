@@ -75,7 +75,7 @@ export const MembershipsPage: React.FC = () => {
 
                   <div className="flex items-baseline gap-1">
                     <span className="text-4xl font-extrabold font-mono text-[#F4F5F3]">
-                      ${plan.price}
+                      ₹{plan.price}
                     </span>
                     <span className="text-xs text-[#9BA3A8]">/ month</span>
                   </div>
@@ -129,7 +129,7 @@ export const MembershipsPage: React.FC = () => {
                 Player Reward Store
               </span>
               <h3 className="text-2xl font-bold text-[#F4F5F3] font-display">
-                Vortex Loyalty Points & Rewards
+                ARS Loyalty Points & Rewards
               </h3>
               <p className="text-xs text-[#9BA3A8] mt-1">
                 Earn 50 points per completed match and 100 points for tournament participation.

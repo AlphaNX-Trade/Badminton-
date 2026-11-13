@@ -10,11 +10,12 @@ export const Header: React.FC = () => {
 
   const navLinks = [
     { id: 'home', label: 'Home' },
+    { id: 'anatomy3d', label: '3D Anatomy' },
     { id: 'courts', label: 'Courts' },
     { id: 'book', label: 'Book Court' },
     { id: 'coaching', label: 'Coaching' },
     { id: 'tournaments', label: 'Tournaments' },
-    { id: 'community', label: 'Community' },
+    { id: 'memberships', label: 'Passes' },
   ];
 
   const handleNavClick = (id: string) => {
@@ -48,8 +49,8 @@ export const Header: React.FC = () => {
                 <path d="M8.5 14h7" />
               </svg>
             </div>
-            <span className="font-display tracking-wider font-extrabold text-base sm:text-lg">
-              VORTEX <span className="text-[#C7F464]">ARENA</span>
+            <span className="font-display tracking-wider font-extrabold text-sm sm:text-base">
+              ARS <span className="text-[#C7F464]">BADMINTON ARENA</span>
             </span>
           </button>
 

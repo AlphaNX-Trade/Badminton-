@@ -285,7 +285,7 @@ export const BookingCalendar: React.FC = () => {
                       )}
                     </div>
                     <p className="text-xs text-[#9BA3A8] mt-0.5">
-                      {court.surfaceType} · Base rate ${court.pricePerHour}/hr
+                      {court.surfaceType} · Base rate ₹{court.pricePerHour}/hr
                     </p>
                   </div>
                 </div>
@@ -321,7 +321,7 @@ export const BookingCalendar: React.FC = () => {
 
                     let slotStyle =
                       'bg-[#151A20] border-[#242C33] text-[#F4F5F3] hover:border-[#C7F464] hover:shadow-[0_0_12px_rgba(199,244,100,0.15)] cursor-pointer';
-                    let statusLabel = `$${price}`;
+                    let statusLabel = `₹${price}`;
 
                     if (avail.status === 'booked') {
                       slotStyle =
@@ -353,7 +353,7 @@ export const BookingCalendar: React.FC = () => {
                             ? `Booked by ${avail.booking?.customerName}. Click to join waitlist.`
                             : avail.status === 'reserved'
                             ? `Reserved for ${avail.batch?.name}`
-                            : `${slot.time} - $${price}/hr`
+                            : `${slot.time} - ₹${price}/hr`
                         }
                       >
                         <span

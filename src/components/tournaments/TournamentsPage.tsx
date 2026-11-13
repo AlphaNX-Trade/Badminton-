@@ -7,7 +7,7 @@ import {
   MapPin,
   Users,
   CheckCircle2,
-  DollarSign,
+  Coins,
   ArrowRight,
   Shield,
   Sparkles,
@@ -75,7 +75,7 @@ export const TournamentsPage: React.FC = () => {
                     </div>
                     <div className="p-3 rounded-xl bg-[#151A20] border border-[#242C33]">
                       <span className="text-[11px] text-[#9BA3A8] block">Entry Fee</span>
-                      <span className="text-[#C7F464] font-mono font-bold">${trn.entryFee} / player</span>
+                      <span className="text-[#C7F464] font-mono font-bold">₹{trn.entryFee} / player</span>
                     </div>
                     <div className="p-3 rounded-xl bg-[#151A20] border border-[#242C33] col-span-2 sm:col-span-1">
                       <span className="text-[11px] text-[#9BA3A8] block">Bracket Slots</span>

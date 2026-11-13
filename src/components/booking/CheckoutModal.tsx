@@ -26,10 +26,10 @@ interface CheckoutModalProps {
 }
 
 const AVAILABLE_ADDONS: BookingItemAddon[] = [
-  { id: 'addon-racket', name: 'Yonex Astrox 88D Pro Racket Rental (Pair)', price: 10 },
-  { id: 'addon-shuttles', name: 'Aerosensa 30 Tournament Feather Shuttles (3-Tube)', price: 15 },
-  { id: 'addon-shoes', name: 'Non-Marking Pro Grip Court Shoes (Select Size)', price: 8 },
-  { id: 'addon-camera', name: '4K Smart Video Replay & Match Analytics Recording', price: 12 },
+  { id: 'addon-racket', name: 'Yonex Astrox 88D Pro Racket Rental (Pair)', price: 150 },
+  { id: 'addon-shuttles', name: 'Aerosensa 30 Tournament Feather Shuttles (3-Tube)', price: 450 },
+  { id: 'addon-shoes', name: 'Non-Marking Pro Grip Court Shoes (Select Size)', price: 100 },
+  { id: 'addon-camera', name: '4K Smart Video Replay & Match Analytics Recording', price: 250 },
 ];
 
 export const CheckoutModal: React.FC<CheckoutModalProps> = ({
@@ -43,8 +43,8 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   const { customerProfile, createBooking, settings, setActiveNav } = useApp();
 
   const [customerName, setCustomerName] = useState(customerProfile.name);
-  const [customerEmail, setCustomerEmail] = useState('alex.thorne@vortex.club');
-  const [customerPhone, setCustomerPhone] = useState('+1 (555) 492-1108');
+  const [customerEmail, setCustomerEmail] = useState('alex.thorne@arsarena.club');
+  const [customerPhone, setCustomerPhone] = useState('+91 99201 49211');
 
   const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
   const [promoCode, setPromoCode] = useState('');
@@ -84,7 +84,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
   const handleApplyPromo = () => {
     const code = promoCode.trim().toUpperCase();
-    if (code === 'SMASH20' || code === 'VORTEX20') {
+    if (code === 'SMASH20' || code === 'ARS20') {
       setDiscountPercent(20);
       setPromoApplied(true);
       setPromoError('');
@@ -111,8 +111,8 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
         timeSlot: slot.time,
         startHour: slot.startHour,
         customerName: customerName.trim() || 'Alex Thorne',
-        customerEmail: customerEmail.trim() || 'alex.thorne@vortex.club',
-        customerPhone: customerPhone.trim() || '+1 (555) 492-1108',
+        customerEmail: customerEmail.trim() || 'alex.thorne@arsarena.club',
+        customerPhone: customerPhone.trim() || '+91 99201 49211',
         basePrice: baseCourtPrice,
         addons: chosenAddons,
         discount: discountAmount,
@@ -208,14 +208,14 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                     {confirmedBooking.addons.map((a) => (
                       <div key={a.id} className="flex justify-between text-[#9BA3A8]">
                         <span>· {a.name}</span>
-                        <span>${a.price.toFixed(2)}</span>
+                        <span>₹{a.price.toFixed(2)}</span>
                       </div>
                     ))}
                   </div>
                 )}
                 <div className="flex justify-between py-1.5 text-sm font-bold text-[#F4F5F3]">
                   <span>Total Amount Paid / Due</span>
-                  <span className="text-[#C7F464] font-mono">${confirmedBooking.totalAmount.toFixed(2)}</span>
+                  <span className="text-[#C7F464] font-mono">₹{confirmedBooking.totalAmount.toFixed(2)}</span>
                 </div>
               </div>
 
@@ -264,7 +264,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                     <p className="text-xs text-[#C7F464] mt-0.5">{court.surfaceType}</p>
                   </div>
                   <span className="text-xs font-mono font-semibold text-[#F4F5F3]">
-                    ${baseCourtPrice.toFixed(2)} / hr
+                    ₹{baseCourtPrice.toFixed(2)} / hr
                   </span>
                 </div>
                 <div className="flex flex-wrap items-center gap-4 text-xs text-[#9BA3A8] pt-1 border-t border-[#1E252C]">
@@ -307,7 +307,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                       value={customerPhone}
                       onChange={(e) => setCustomerPhone(e.target.value)}
                       className="w-full bg-[#151A20] border border-[#242C33] rounded-lg px-3 py-2 text-xs text-[#F4F5F3] focus:outline-none focus:border-[#C7F464]"
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="+91 99201 49211"
                     />
                   </div>
                   <div className="sm:col-span-2">
@@ -317,7 +317,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                       value={customerEmail}
                       onChange={(e) => setCustomerEmail(e.target.value)}
                       className="w-full bg-[#151A20] border border-[#242C33] rounded-lg px-3 py-2 text-xs text-[#F4F5F3] focus:outline-none focus:border-[#C7F464]"
-                      placeholder="alex.thorne@vortex.club"
+                      placeholder="alex.thorne@arsarena.club"
                     />
                   </div>
                 </div>
@@ -355,7 +355,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                           <span>{addon.name}</span>
                         </div>
                         <span className="font-mono font-medium text-[#F4F5F3] shrink-0">
-                          +${addon.price.toFixed(2)}
+                          +₹{addon.price.toFixed(2)}
                         </span>
                       </button>
                     );
@@ -482,23 +482,23 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               <div className="p-4 rounded-xl bg-[#151A20] border border-[#242C33] space-y-2 text-xs">
                 <div className="flex justify-between text-[#9BA3A8]">
                   <span>Court Fee ({slot.time})</span>
-                  <span className="font-mono text-[#F4F5F3]">${baseCourtPrice.toFixed(2)}</span>
+                  <span className="font-mono text-[#F4F5F3]">₹{baseCourtPrice.toFixed(2)}</span>
                 </div>
                 {addonsTotal > 0 && (
                   <div className="flex justify-between text-[#9BA3A8]">
                     <span>Equipment Add-ons</span>
-                    <span className="font-mono text-[#F4F5F3]">+${addonsTotal.toFixed(2)}</span>
+                    <span className="font-mono text-[#F4F5F3]">+₹{addonsTotal.toFixed(2)}</span>
                   </div>
                 )}
                 {discountAmount > 0 && (
                   <div className="flex justify-between text-[#C7F464]">
                     <span>Discount (20% SMASH20)</span>
-                    <span className="font-mono">-${discountAmount.toFixed(2)}</span>
+                    <span className="font-mono">-₹{discountAmount.toFixed(2)}</span>
                   </div>
                 )}
                 <div className="flex justify-between text-sm font-bold text-[#F4F5F3] pt-2 border-t border-[#242C33]">
                   <span>Total Amount</span>
-                  <span className="font-mono text-[#C7F464] text-base">${totalAmount.toFixed(2)}</span>
+                  <span className="font-mono text-[#C7F464] text-base">₹{totalAmount.toFixed(2)}</span>
                 </div>
               </div>
 
@@ -506,7 +506,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               <div className="flex items-center gap-2 text-[11px] text-[#9BA3A8]">
                 <ShieldAlert className="w-4 h-4 text-[#C7F464] shrink-0" />
                 <span>
-                  Demo Mode: No real financial charges will occur. State will be updated in real-time.
+                  Demo Mode: Simulated transaction in Indian Rupees (₹). Real-time state update.
                 </span>
               </div>
             </>
@@ -539,7 +539,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                 <>
                   <span>
                     {paymentMode === 'online'
-                      ? `Confirm & Pay $${totalAmount.toFixed(2)} (Demo)`
+                      ? `Confirm & Pay ₹${totalAmount.toFixed(2)} (Demo)`
                       : 'Confirm Demo Booking (Pay Later)'}
                   </span>
                   <ArrowRight className="w-4 h-4" />

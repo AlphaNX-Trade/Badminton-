@@ -23,8 +23,8 @@ export const WaitlistModal: React.FC<WaitlistModalProps> = ({
 }) => {
   const { customerProfile, joinWaitlist } = useApp();
   const [name, setName] = useState(customerProfile.name);
-  const [email, setEmail] = useState('alex.thorne@vortex.club');
-  const [phone, setPhone] = useState('+1 (555) 492-1108');
+  const [email, setEmail] = useState('alex.thorne@arsarena.club');
+  const [phone, setPhone] = useState('+91 99201 49211');
   const [submitted, setSubmitted] = useState(false);
 
   if (!isOpen) return null;

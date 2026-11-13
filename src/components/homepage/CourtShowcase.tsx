@@ -129,7 +129,7 @@ export const CourtShowcase: React.FC = () => {
                     <span className="text-[11px] text-[#9BA3A8] block">Hourly Rate</span>
                     <div className="flex items-baseline gap-1">
                       <span className="text-2xl font-bold font-mono text-[#F4F5F3]">
-                        ${court.pricePerHour}
+                        ₹{court.pricePerHour}
                       </span>
                       <span className="text-xs text-[#9BA3A8]">/ hour</span>
                     </div>

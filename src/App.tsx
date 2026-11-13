@@ -14,6 +14,7 @@ import { TournamentsPage } from './components/tournaments/TournamentsPage';
 import { CommunityPage } from './components/community/CommunityPage';
 import { MembershipsPage } from './components/memberships/MembershipsPage';
 import { ToastContainer } from './components/shared/ToastContainer';
+import { Anatomy3DExperience } from './components/3d/Anatomy3DExperience';
 import { Calendar, ArrowRight, ShieldCheck } from 'lucide-react';
 
 const MainAppContent: React.FC = () => {
@@ -32,6 +33,7 @@ const MainAppContent: React.FC = () => {
         {activeNav === 'home' && (
           <div className="space-y-0">
             <HeroSection />
+            <Anatomy3DExperience />
             <CourtShowcase />
 
             {/* Quick interactive booking calendar anchor section on homepage */}
@@ -63,6 +65,12 @@ const MainAppContent: React.FC = () => {
             </section>
 
             <FeaturesAmenities />
+          </div>
+        )}
+
+        {activeNav === 'anatomy3d' && (
+          <div className="py-6 bg-[#080A0C]">
+            <Anatomy3DExperience />
           </div>
         )}
 

@@ -118,7 +118,7 @@ interface AppContextType {
   resetDemoData: () => void;
 }
 
-const STORAGE_KEY = 'vortex_badminton_demo_v2';
+const STORAGE_KEY = 'ars_badminton_demo_v4_inr';
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
@@ -320,7 +320,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   // Bookings
   const createBooking = (newBookingData: Omit<Booking, 'id' | 'bookingRef' | 'bookedAt'>): Booking => {
     const randomRefNum = Math.floor(1000 + Math.random() * 9000);
-    const bookingRef = `VTX-2026-${randomRefNum}`;
+    const bookingRef = `ARS-2026-${randomRefNum}`;
     const newBooking: Booking = {
       ...newBookingData,
       id: `booking-${Date.now()}`,

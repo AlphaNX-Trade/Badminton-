@@ -105,7 +105,7 @@ export const CustomerDashboard: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-[#9BA3A8] mt-1">
-                  Member since Nov 2024 · Vortex Pro Pass Member
+                  Member since Nov 2024 · ARS Pro Pass Member
                 </p>
               </div>
             </div>
@@ -275,7 +275,7 @@ export const CustomerDashboard: React.FC = () => {
                           <span>Total Fee</span>
                         </span>
                         <span className="text-[#C7F464] font-mono font-bold">
-                          ${booking.totalAmount.toFixed(2)}
+                          ₹{booking.totalAmount.toFixed(2)}
                         </span>
                       </div>
                     </div>
@@ -296,7 +296,7 @@ export const CustomerDashboard: React.FC = () => {
                             onClick={() => markBookingPaid(booking.id)}
                             className="px-3 py-1.5 bg-[#C7F464] text-[#080A0C] font-semibold text-xs rounded-lg hover:bg-[#b8e855] transition-colors"
                           >
-                            Pay Now (${booking.totalAmount.toFixed(2)})
+                            Pay Now (₹{booking.totalAmount.toFixed(2)})
                           </button>
                         )}
                         <button
@@ -355,7 +355,7 @@ export const CustomerDashboard: React.FC = () => {
                       <div className="text-right">
                         <span className="text-xs text-[#9BA3A8] block">Due Amount</span>
                         <span className="text-lg font-mono font-bold text-[#F4F5F3]">
-                          ${booking.totalAmount.toFixed(2)}
+                          ₹{booking.totalAmount.toFixed(2)}
                         </span>
                       </div>
                       <button
@@ -397,7 +397,7 @@ export const CustomerDashboard: React.FC = () => {
                     </div>
                     <h4 className="text-sm font-bold text-[#F4F5F3]">{booking.courtName}</h4>
                     <p className="text-xs text-[#9BA3A8]">
-                      {booking.date} · {booking.timeSlot} · ${booking.totalAmount.toFixed(2)}
+                      {booking.date} · {booking.timeSlot} · ₹{booking.totalAmount.toFixed(2)}
                     </p>
                     <button
                       onClick={() => setSelectedBookingForReceipt(booking)}
@@ -574,7 +574,7 @@ export const CustomerDashboard: React.FC = () => {
                 <div className="flex justify-between pt-2 border-t border-[#242C33] text-sm font-bold text-[#F4F5F3]">
                   <span>Total Amount:</span>
                   <span className="text-[#C7F464] font-mono">
-                    ${selectedBookingForReceipt.totalAmount.toFixed(2)}
+                    ₹{selectedBookingForReceipt.totalAmount.toFixed(2)}
                   </span>
                 </div>
               </div>

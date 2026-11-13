@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
                 </svg>
               </div>
               <span className="font-display font-bold text-sm tracking-wider text-[#F4F5F3]">
-                VORTEX <span className="text-[#C7F464]">ARENA</span>
+                ARS <span className="text-[#C7F464]">BADMINTON ARENA</span>
               </span>
             </div>
             <p className="text-xs leading-relaxed text-[#9BA3A8]">
@@ -154,7 +154,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom line: Disclaimer & Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#9BA3A8]/80">
-          <p>© {new Date().getFullYear()} Vortex Badminton Arena. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ARS BADMINTON ARENA. All rights reserved.</p>
           <div className="flex items-center gap-3 text-[11px]">
             <span className="text-[#C7F464]/80 bg-[#151A20] px-2.5 py-1 rounded border border-[#242C33]">
               INTERACTIVE DEMO PLATFORM · ZERO BACKEND · NO REAL TRANSACTIONS

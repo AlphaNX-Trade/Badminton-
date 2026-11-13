@@ -17,12 +17,12 @@ export const CoachingPage: React.FC = () => {
   const { coachingBatches, addStudentToBatch, customerProfile, setActiveNav } = useApp();
   const [selectedBatchForEnroll, setSelectedBatchForEnroll] = useState<CoachingBatch | null>(null);
   const [studentName, setStudentName] = useState(customerProfile.name);
-  const [studentEmail, setStudentEmail] = useState('alex.thorne@vortex.club');
+  const [studentEmail, setStudentEmail] = useState('alex.thorne@arsarena.club');
 
   const handleEnrollSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedBatchForEnroll) return;
-    addStudentToBatch(selectedBatchForEnroll.id, studentName.trim() || 'Alex Thorne', studentEmail.trim() || 'alex.thorne@vortex.club');
+    addStudentToBatch(selectedBatchForEnroll.id, studentName.trim() || 'Alex Thorne', studentEmail.trim() || 'alex.thorne@arsarena.club');
     setSelectedBatchForEnroll(null);
   };
 
@@ -32,7 +32,7 @@ export const CoachingPage: React.FC = () => {
         {/* Header */}
         <div className="max-w-3xl space-y-4">
           <span className="text-xs font-semibold text-[#C7F464] uppercase tracking-wider block">
-            Vortex Badminton Training Academy
+            ARS Badminton Arena Training Academy
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-[#F4F5F3] font-display tracking-tight leading-tight">
             WORLD-CLASS COACHING. <br />
@@ -155,7 +155,7 @@ export const CoachingPage: React.FC = () => {
                     <div>
                       <span className="text-[11px] text-[#9BA3A8] block">Academy Tuition</span>
                       <span className="text-xl font-bold font-mono text-[#F4F5F3]">
-                        ${batch.monthlyFee}
+                        ₹{batch.monthlyFee}
                       </span>
                       <span className="text-xs text-[#9BA3A8]">/ month</span>
                     </div>
@@ -206,7 +206,7 @@ export const CoachingPage: React.FC = () => {
                 </div>
                 <div className="flex justify-between">
                   <span>Tuition:</span>
-                  <span className="text-[#F4F5F3] font-bold">${selectedBatchForEnroll.monthlyFee}/month</span>
+                  <span className="text-[#F4F5F3] font-bold">₹{selectedBatchForEnroll.monthlyFee}/month</span>
                 </div>
               </div>
 
