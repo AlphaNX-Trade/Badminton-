@@ -2,16 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import {
-  Layers,
   RotateCw,
-  Sun,
-  Eye,
   Sliders,
-  Sparkles,
-  Maximize2,
-  Play,
-  X,
-  ShieldCheck,
   ChevronDown,
   ChevronUp,
   ZoomIn,
@@ -29,7 +21,6 @@ export const Anatomy3DExperience: React.FC = () => {
   const [lightPreset, setLightPreset] = useState<LightPreset>('tournament');
   const [autoRotate, setAutoRotate] = useState<boolean>(true);
   const [selectedLayerIndex, setSelectedLayerIndex] = useState<number | null>(null);
-  const [showVideoModal, setShowVideoModal] = useState<boolean>(false);
   const [isDockCollapsed, setIsDockCollapsed] = useState<boolean>(false);
 
   // References to communicate with the Three.js loop without re-triggering full canvas mounts
@@ -584,15 +575,6 @@ export const Anatomy3DExperience: React.FC = () => {
           >
             Carbon Racket
           </button>
-
-          {/* Inspiration video trigger button */}
-          <button
-            onClick={() => setShowVideoModal(true)}
-            className="p-1.5 bg-[#191F24] text-[#C7F464] hover:bg-[#20272D] rounded-xl transition-colors ml-1"
-            title="Watch 3D Showcase Inspiration Video"
-          >
-            <Play className="w-3.5 h-3.5" />
-          </button>
         </div>
       </div>
 
@@ -728,42 +710,6 @@ export const Anatomy3DExperience: React.FC = () => {
         </div>
       </div>
 
-      {/* Video Modal to watch the inspiration reference video */}
-      {showVideoModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="bg-[#111519] border border-[#242C33] rounded-3xl max-w-2xl w-full p-6 text-left shadow-2xl relative space-y-4">
-            <div className="flex items-center justify-between border-b border-[#242C33] pb-3">
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-[#C7F464]" />
-                <h3 className="text-base font-bold text-[#F4F5F3]">
-                  3D Animation & Exploded View Reference
-                </h3>
-              </div>
-              <button
-                onClick={() => setShowVideoModal(false)}
-                className="text-[#9BA3A8] hover:text-[#F4F5F3] p-1"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <div className="rounded-2xl overflow-hidden bg-black border border-[#242C33] aspect-video flex items-center justify-center">
-              <video
-                controls
-                autoPlay
-                className="w-full h-full object-contain"
-                src="/assets/aistudio/I_Built_a__10_000_3D_Website_with_FREE_AI_Tools_in_5_Minutes_____coding__vibecoding__3danimation_360p__73cff7af.mp4"
-              >
-                Your browser does not support the video tag.
-              </video>
-            </div>
-
-            <p className="text-xs text-[#9BA3A8] leading-relaxed">
-              Demonstrating the exact MotionSites luxury 3D exploded structure adapted for badminton court layers, precision equipment, and cinematic lighting.
-            </p>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
